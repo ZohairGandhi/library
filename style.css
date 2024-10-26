@@ -16,14 +16,50 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #F1FAEE;
+    font-family: 'aileronregular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .header {
     text-align: center;
-    font-family: 'aileronregular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
     font-size: 3rem;
     color: #A8DADC;
     background-color: #457B9D;
     padding: 1.5rem 0;
+}
+
+.cards-sec {
+    margin: 5rem 0;
+    width: 80%;
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 30ch;
+    border-radius: 8px;
+    padding: 1rem 0;
+    background-color: #1D3557;
+    color: #A8DADC;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.card p:first-child,
+.card p:nth-child(2) {
+    font-weight: 700;
+}
+
+.card p:first-child {
+    font-size: 1.5rem;
+}
+
+.card p:nth-child(2) {
+    font-size: 1.2rem;
 }

@@ -1,3 +1,29 @@
+@font-face {
+    font-family: 'aileronregular';
+    src: url('fonts/aileron-regular-webfont.woff2') format('woff2'),
+         url('fonts/aileron-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    color: blue;
+    display: flex;
+    flex-direction: column;
+    background-color: #F1FAEE;
+}
+
+.header {
+    text-align: center;
+    font-family: 'aileronregular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #A8DADC;
+    background-color: #457B9D;
+    padding: 1.5rem 0;
 }

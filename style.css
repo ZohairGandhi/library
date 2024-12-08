@@ -32,17 +32,22 @@ body {
   width: 80%;
   align-self: center;
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-evenly;
+  justify-items: center;
 }
 
-.card {
+.card,
+#add-btn {
   width: 30ch;
   border-radius: 8px;
   padding: 1rem 0;
   background-color: #1d3557;
   color: #a8dadc;
   font-size: 1.1rem;
+}
+
+.card {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -66,4 +71,8 @@ body {
 label {
   display: flex;
   gap: 0.4rem;
+}
+
+#add-btn p {
+  font-size: 1.5rem;
 }

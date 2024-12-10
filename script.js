@@ -44,4 +44,17 @@ function displayLibrary() {
   }
 }
 
+const addBtn = document.querySelector("#add-btn");
+const modal = document.querySelector("dialog");
+
+addBtn.addEventListener("click", () => {
+  modal.showModal();
+});
+
+const closeBtn = document.querySelector(".form-btns button:nth-child(2)");
+
+closeBtn.addEventListener("click", () => {
+  modal.close();
+});
+
 displayLibrary();

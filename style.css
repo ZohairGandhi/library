@@ -11,10 +11,17 @@
   padding: 0;
 }
 
+:root {
+  --body-bg-color: #f1faee;
+  --head-txt-color: #a8dadc;
+  --head-bg-color: #457b9d;
+  --card-bg-color: #1d3557;
+}
+
 body {
   display: flex;
   flex-direction: column;
-  background-color: #f1faee;
+  background-color: var(--body-bg-color);
   font-family: "aileronregular", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -22,8 +29,8 @@ body {
   text-align: center;
   font-weight: 700;
   font-size: 3rem;
-  color: #a8dadc;
-  background-color: #457b9d;
+  color: var(--head-txt-color);
+  background-color: var(--head-bg-color);
   padding: 1.5rem 0;
 }
 
@@ -42,12 +49,12 @@ body {
   width: 30ch;
   border-radius: 8px;
   padding: 1rem 0;
-  background-color: #1d3557;
-  color: #a8dadc;
   font-size: 1.1rem;
 }
 
 .card {
+  background-color: var(--card-bg-color);
+  color: var(--head-txt-color);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -73,6 +80,81 @@ label {
   gap: 0.4rem;
 }
 
+#add-btn {
+  background-color: var(--head-txt-color);
+  color: var(--card-bg-color);
+  border: none;
+}
+
+#add-btn:hover {
+  background-color: var(--card-bg-color);
+  color: var(--head-txt-color);
+}
+
 #add-btn p {
   font-size: 1.5rem;
+  font-weight: 700;
+}
+
+dialog {
+  background-color: var(--head-bg-color);
+  color: var(--head-txt-color);
+  width: 30ch;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(2px);
+}
+
+dialog p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+dialog form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+dialog form label {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+dialog form input[type="text"],
+dialog form input[type="number"] {
+  appearance: none;
+  width: 30ch;
+  border: none;
+  border-radius: 8px;
+  padding: 0.3rem 0.5rem;
+}
+
+dialog form input[type="number"]:invalid {
+  border: 1px solid red;
+}
+
+.form-btns {
+  display: flex;
+  gap: 1rem;
+}
+
+dialog form button {
+  appearance: none;
+  background-color: var(--head-txt-color);
+  color: var(--card-bg-color);
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
 }

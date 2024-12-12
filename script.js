@@ -14,7 +14,17 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
+const cardsSec = document.querySelector(".cards-sec");
+
+const newBtn = document.createElement("button");
+newBtn.setAttribute("id", "new-btn");
+const newBtnP = document.createElement("p");
+newBtnP.textContent = "New Book";
+newBtn.appendChild(newBtnP);
+
 function displayLibrary() {
+  cardsSec.appendChild(newBtn);
+  
   for (let book of myLibrary) {
     const titleP = document.createElement("p");
     const authorP = document.createElement("p");
@@ -39,12 +49,12 @@ function displayLibrary() {
     cardDiv.classList.add("card");
     cardDiv.append(titleP, authorP, pagesP, chBoxLabel);
 
-    const cardsSec = document.querySelector(".cards-sec");
     cardsSec.appendChild(cardDiv);
   }
 }
 
-const newBtn = document.querySelector("#new-btn");
+displayLibrary();
+
 const modal = document.querySelector("dialog");
 
 newBtn.addEventListener("click", () => {
@@ -67,7 +77,7 @@ addBtn.addEventListener("click", () => {
 
   addBookToLibrary(new Book(title, author, pages, haveRead.checked));
 
+  cardsSec.innerHTML = "";
+
   displayLibrary();
 })
-
-displayLibrary();

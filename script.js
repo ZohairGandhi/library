@@ -44,10 +44,10 @@ function displayLibrary() {
   }
 }
 
-const addBtn = document.querySelector("#add-btn");
+const newBtn = document.querySelector("#new-btn");
 const modal = document.querySelector("dialog");
 
-addBtn.addEventListener("click", () => {
+newBtn.addEventListener("click", () => {
   modal.showModal();
 });
 
@@ -56,5 +56,18 @@ const closeBtn = document.querySelector(".form-btns button:nth-child(2)");
 closeBtn.addEventListener("click", () => {
   modal.close();
 });
+
+const addBtn = document.querySelector(".form-btns button:first-child");
+
+addBtn.addEventListener("click", () => {
+  const title = document.querySelector("#title").value;
+  const author = document.querySelector("#author").value;
+  const pages = document.querySelector("#pages").value;
+  const haveRead = document.querySelector("#haveRead");
+
+  addBookToLibrary(new Book(title, author, pages, haveRead.checked));
+
+  displayLibrary();
+})
 
 displayLibrary();

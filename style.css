@@ -45,7 +45,7 @@ body {
 }
 
 .card,
-#add-btn {
+#new-btn {
   width: 30ch;
   border-radius: 8px;
   padding: 1rem 0;
@@ -80,18 +80,18 @@ label {
   gap: 0.4rem;
 }
 
-#add-btn {
+#new-btn {
   background-color: var(--head-txt-color);
   color: var(--card-bg-color);
   border: none;
 }
 
-#add-btn:hover {
+#new-btn:hover {
   background-color: var(--card-bg-color);
   color: var(--head-txt-color);
 }
 
-#add-btn p {
+#new-btn p {
   font-size: 1.5rem;
   font-weight: 700;
 }

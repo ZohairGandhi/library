@@ -3,11 +3,11 @@ const myLibrary = [
   { title: "Dune", author: "Frank Herbert", pages: "412", haveRead: false },
 ];
 
-function Book(title, author, pages, haveReadBook) {
+function Book(title, author, pages, haveRead) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.haveRead = haveReadBook;
+  this.haveRead = haveRead;
 }
 
 function addBookToLibrary(book) {
@@ -56,28 +56,30 @@ function displayLibrary() {
 displayLibrary();
 
 const modal = document.querySelector("dialog");
+const form = document.querySelector("form");
 
 newBtn.addEventListener("click", () => {
+  form.reset();
   modal.showModal();
 });
 
-const closeBtn = document.querySelector(".form-btns button:nth-child(2)");
+// const closeBtn = document.querySelector(".form-btns button:nth-child(2)");
 
-closeBtn.addEventListener("click", () => {
-  modal.close();
-});
+// closeBtn.addEventListener("click", () => {
+//   modal.close();
+// });
 
-const addBtn = document.querySelector(".form-btns button:first-child");
+const addBtn = document.querySelector("form button");
 
 addBtn.addEventListener("click", () => {
-  const title = document.querySelector("#title").value;
-  const author = document.querySelector("#author").value;
-  const pages = document.querySelector("#pages").value;
-  const haveRead = document.querySelector("#haveRead");
+  const title = document.querySelector("#form-title").value;
+  const author = document.querySelector("#form-author").value;
+  const pages = document.querySelector("#form-pages").value;
+  const haveRead = document.querySelector("#form-haveRead");
 
   addBookToLibrary(new Book(title, author, pages, haveRead.checked));
 
   cardsSec.innerHTML = "";
 
   displayLibrary();
-})
+});

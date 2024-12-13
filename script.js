@@ -24,32 +24,45 @@ newBtn.appendChild(newBtnP);
 
 function displayLibrary() {
   cardsSec.appendChild(newBtn);
-  
+  let index = 0;
+
   for (let book of myLibrary) {
     const titleP = document.createElement("p");
     const authorP = document.createElement("p");
     const pagesP = document.createElement("p");
     const chBoxLabel = document.createElement("label");
     const chBox = document.createElement("input");
+    const removeBtn = document.createElement("button");
 
     chBoxLabel.setAttribute("for", "haveRead");
     chBox.setAttribute("type", "checkbox");
     chBox.setAttribute("name", "haveRead");
     chBox.setAttribute("id", "haveRead");
+    removeBtn.setAttribute("data-index", index);
 
     titleP.textContent = book.title;
     authorP.textContent = book.author;
     pagesP.textContent = book.pages;
     chBoxLabel.textContent = "Read";
     chBox.checked = book.haveRead;
+    removeBtn.textContent = "Remove";
+
+    removeBtn.addEventListener("click", (event) => {
+      const removeIdx = event.target.dataset.index;
+      myLibrary.splice(removeIdx, 1);
+      cardsSec.innerHTML = "";
+      displayLibrary();
+    });
 
     chBoxLabel.appendChild(chBox);
 
     const cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
-    cardDiv.append(titleP, authorP, pagesP, chBoxLabel);
+    cardDiv.append(titleP, authorP, pagesP, chBoxLabel, removeBtn);
 
     cardsSec.appendChild(cardDiv);
+
+    index++;
   }
 }
 
@@ -62,12 +75,6 @@ newBtn.addEventListener("click", () => {
   form.reset();
   modal.showModal();
 });
-
-// const closeBtn = document.querySelector(".form-btns button:nth-child(2)");
-
-// closeBtn.addEventListener("click", () => {
-//   modal.close();
-// });
 
 const addBtn = document.querySelector("form button");
 

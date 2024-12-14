@@ -80,10 +80,14 @@ body {
 .card button {
   appearance: none;
   background-color: #e63946;
-  color: white;
+  color: #f1faee;
   border: none;
   border-radius: 8px;
   padding: 0.5rem;
+}
+
+.card button:hover {
+  background-color: #c81927;
 }
 
 label {

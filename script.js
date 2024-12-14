@@ -38,6 +38,7 @@ function displayLibrary() {
     chBox.setAttribute("type", "checkbox");
     chBox.setAttribute("name", "haveRead");
     chBox.setAttribute("id", "haveRead");
+    chBox.setAttribute("data-index", index);
     removeBtn.setAttribute("data-index", index);
 
     titleP.textContent = book.title;
@@ -46,6 +47,11 @@ function displayLibrary() {
     chBoxLabel.textContent = "Read";
     chBox.checked = book.haveRead;
     removeBtn.textContent = "Remove";
+
+    chBox.addEventListener("change", (event) => {
+      const changeIdx = event.target.dataset.index;
+      myLibrary.at(changeIdx).haveRead = event.target.checked;
+    });
 
     removeBtn.addEventListener("click", (event) => {
       const removeIdx = event.target.dataset.index;
